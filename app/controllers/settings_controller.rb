@@ -1,8 +1,6 @@
 class SettingsController < ApplicationController
 	def new
     @setting = Setting.create(:start_time => Time.now,:end_time=>Time.now + 30.minute)
-     @setting.save
-   
   end
  
 
