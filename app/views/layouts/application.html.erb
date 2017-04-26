@@ -17,7 +17,14 @@
     <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
   <% end %>
 </div>
- 
+    <%= link_to 'admin','admin' %>||
+    <%= link_to 'result','/result' %> ||
+    <%= link_to 'new','/votes/new' %> ||
+    <%= link_to 'votes','/votes' %> ||
+
+
+    
+   
     <%= yield %>
   </body>
 </html>

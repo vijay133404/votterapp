@@ -39,6 +39,12 @@ class VotesController < ApplicationController
     end
   end
 
+
+def set_api_time_zone
+  utc_offset = current_user_session && current_user_session.user ? current_user_session.user.time_zone_offset.to_i.minutes : 0
+  user_timezone = ActiveSupport::TimeZone[utc_offset]
+  Time.zone = user_timezone if user_timezone
+end
   # PATCH/PUT /votes/1
   # PATCH/PUT /votes/1.json
   def update

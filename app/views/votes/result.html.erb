@@ -1,0 +1,18 @@
+<table>
+<tr>
+    <th>vijay</th>
+    <th>yogi</th>
+    <th>arvind kejriwal</th> 
+      <th>rahul ghandhi</th>
+      <th> BJP</th>
+
+</tr>
+<tr>
+<td><%= Vote.where(:candidate_id=>1).count %></td>
+<td><%= Vote.where(:candidate_id=>2).count %></td>
+<td><%= Vote.where(:candidate_id=>3).count %></td>
+<td><%= Vote.where(:candidate_id=>4).count %></td>
+<td><%= Vote.where(:candidate_id=>5).count %></td>
+
+</tr>
+</table>
