@@ -34,12 +34,12 @@
   <tbody>
     <% @votes.each do |vote| %>
       <tr>
+      <%if vote.user_id == current_user.id %>
         <td><%if vote.candidate_id.present? %> 
          <%= Candidate.find(vote.candidate_id).name %> 
         <% end %></td>
         <td>
          <%= User.find(vote.user_id).email %> </td>
-         <%if vote.user_id == current_user.id %>
          
        <td>  <%= link_to 'show', vote %><td>
        <%end%>
@@ -57,15 +57,16 @@
 <%end%>
 
 <style type="text/css">
+
   body{
-  text-align: center;
-  background: #00ECB9;
+  text-align: right;
+  background: #607D8B;
   font-family: sans-serif;
   font-weight: 100;
 }
 
 h1{
-  color: #396;
+  color: #0288D1;
   font-weight: 100;
   font-size: 40px;
   margin: 40px 0px 20px;
@@ -73,7 +74,7 @@ h1{
 
 #clockdiv{
   font-family: sans-serif;
-  color: #fff;
+  color: #8D6E63;
   display: inline-block;
   font-weight: 100;
   text-align: center;
@@ -90,7 +91,7 @@ h1{
 #clockdiv div > span{
   padding: 15px;
   border-radius: 3px;
-  background: #00816A;
+  background: #1B5E20;
   display: inline-block;
 }
 
@@ -143,3 +144,4 @@ function initializeClock(id, endtime) {
 var deadline = "<%= Setting.last.end_time %>"
 initializeClock('clockdiv', deadline);
 </script>
+
